@@ -1,38 +1,25 @@
-# Import Flask module
-from flask import Flask, render_template, request
+# Python program to make a simple calculator
 
-# Create an instance of Flask class
-app = Flask(__name__)
+# take inputs
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
 
-# Define a route for the home page
-@app.route('/')
-def home():
-    # Render the form.html template
-    return render_template('form.html')
+# choose operation
+print("Operation: +, -, *, /")
+select = input("Select operations: ")
 
-# Define a route for the result page
-@app.route('/result', methods=['POST'])
-def result():
-    # Get the values and operation from the form
-    value1 = float(request.form['value1'])
-    value2 = float(request.form['value2'])
-    operation = request.form['operation']
-
-    # Perform the calculation based on the operation
-    if operation == '+':
-        result = value1 + value2
-    elif operation == '-':
-        result = value1 - value2
-    elif operation == '*':
-        result = value1 * value2
-    elif operation == '/':
-        result = value1 / value2
-    else:
-        result = 'Invalid operation'
-
-    # Render the result.html template with the result
-    return render_template('result.html', result=result)
-
-# Run the app in debug mode
-if __name__ == '__main__':
-    app.run(debug=True)
+# check operations and display result
+# add (+) two numbers
+if select == "+":
+    print(num1, "+", num2, "=", num1+num2)
+# subtract (-) two numbers
+elif select == "-":
+    print(num1, "-", num2, "=", num1-num2)
+# multiply (*) two numbers
+elif select == "*":
+    print(num1, "*", num2, "=", num1*num2)
+# divide (/) two numbers
+elif select == "/":
+    print(num1, "/", num2, "=", num1/num2)
+else:
+    print("Invalid input")
