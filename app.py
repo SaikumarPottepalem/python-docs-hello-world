@@ -1,4 +1,4 @@
-# Python program to make a simple calculator
+# Python program to make a simple calculator Anjinkaya
 
 # take inputs
 num1 = float(input("Enter first number: "))
